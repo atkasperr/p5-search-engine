@@ -1,0 +1,21 @@
+# Virtual environments
+env/
+venv/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Binary files (adjust extensions as needed)
+*.tar.xz
+*.exe
+*.dll
+*.so
+
+# Log files
+*.log
+
+# OS-specific files
+.DS_Store
+Thumbs.db

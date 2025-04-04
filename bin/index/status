@@ -1,0 +1,14 @@
+#!/bin/bash
+set +o pipefail
+NPROCS=$(pgrep -f "flask --app index run --host 0.0.0.0 --port 900[0-2]" | wc -l)
+set -o pipefail
+if [ "$NPROCS" -eq 3 ]; then
+  echo "index server running"
+  exit
+elif [ "$NPROCS" -eq 0 ]; then
+  echo "index server stopped"
+  exit 1
+else
+  echo "index server error: found ${NPROCS} processes, expected 3"
+  exit 2
+fi
